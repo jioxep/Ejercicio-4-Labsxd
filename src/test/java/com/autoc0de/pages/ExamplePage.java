@@ -27,6 +27,7 @@ public class ExamplePage extends MasterPage {
     private final String USUARIO_INPUT_XPATH = "//*[@id=\"frmLogin\"]/div/div[2]/dl[1]/dd[1]/input";
     private final String PASS_INPUT_XPATH = "//*[@id=\"frmLogin\"]/div/div[2]/dl[1]/dd[2]/input";
     private final String USER_LOGIN_LBL_XPATH = "//*[@id=\"navbarDropdown\"]/span";
+    private final String HOME_CHAT = "//*[@id=\"iframeCBox\"]";
 
     /*
      ** //FUNCTIONS **
@@ -95,5 +96,9 @@ public class ExamplePage extends MasterPage {
 
     public void verifyLogin(){
         Assert.assertTrue(auto_getElementText(By.xpath(USER_LOGIN_LBL_XPATH)).toLowerCase().contains("autoc0de"), "Error at login - Invalid username or passwor");
+    }
+
+    public void verifyHomePage(){
+        Assert.assertTrue(auto_isElementPresent(By.xpath(HOME_CHAT)), "Error verify home page - Redirect failed");
     }
 }

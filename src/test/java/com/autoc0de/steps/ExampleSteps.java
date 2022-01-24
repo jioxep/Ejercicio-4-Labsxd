@@ -42,8 +42,8 @@ public class ExampleSteps {
 
     }
 
-    @Then("the user verifies that they are logged in.")
-    public void theUserVerifiesThatTheyAreLoggedIn() {
-        examplePage.verifyLogin();
+    @Then("the user verifies that they are in Home page.")
+    public void theUserVerifiesThatTheyAreInHomePage() {
+        examplePage.verifyHomePage();
     }
 }
